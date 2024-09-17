@@ -1,0 +1,104 @@
+
+body {
+    background-color: #1a1a1a;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 2%;
+    padding: 0;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2rem;
+  }
+  
+  table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  th, td {
+    padding: 12px;
+    border: 1px solid white;
+  }
+  
+  th {
+    background-color: #333;
+  }
+  
+  td:first-child {
+    width: 50px;  
+  }
+  
+ 
+  .positive {
+    color: green;
+  }
+  
+  .negative {
+    color: red;
+  }
+  
+  /* Mobile Styles (For screens up to 600px wide) */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    table {
+      width: 100%;
+    }
+  
+    th, td {
+      padding: 8px;
+      font-size: 0.6rem;
+    }
+  
+    td:first-child {
+      width: 30px;  
+    }
+  }
+  
+ 
+  @media (min-width: 601px) and (max-width: 992px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    table {
+      width: 95%;
+    }
+  
+    th, td {
+      padding: 10px;
+      font-size: 1rem;
+    }
+  
+    td:first-child {
+      width: 40px;  /* Adjust width for tablet */
+    }
+  }
+  
+  /* Desktop Styles (For screens wider than 992px) */
+  @media (min-width: 993px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    table {
+      width: 80%;
+    }
+  
+    th, td {
+      padding: 15px;
+      font-size: 1.2rem;
+    }
+  
+    td:first-child {
+      width: 50px;  /* Adjust width for desktop */
+    }
+  }
+  

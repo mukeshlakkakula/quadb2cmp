@@ -5,9 +5,9 @@ import cors from "cors";
 const app = express();
 const PORT = process.env.PORT || 4000;
 app.use(cors());
-app.use(express.static('public'));
 
-// Initialize SQLite Database
+
+// initializing SQLite Database
 let db = new sqlite3.Database('./crypto.db', (err) => {
   if (err) {
     console.error('Error opening database: ' + err.message);
@@ -26,6 +26,7 @@ let db = new sqlite3.Database('./crypto.db', (err) => {
     });
   }
 });
+
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.header(
@@ -35,7 +36,7 @@ app.use((req, res, next) => {
     next();
   });
 
-// Fetch Data from WazirX API and Store it in SQLite
+// fetching data from given API 
 async function fetchCryptoData() {
   try {
     const response = await fetch('https://api.wazirx.com/api/v2/tickers');
@@ -44,7 +45,7 @@ async function fetchCryptoData() {
     const top10 = Object.values(data).slice(0, 10);  // Get the top 10 entries
 
     db.serialize(() => {
-      db.run('DELETE FROM crypto_data'); // Clear old data
+      db.run('DELETE FROM crypto_data'); // clearing old data
       const stmt = db.prepare('INSERT INTO crypto_data (name, last, buy, sell, volume, base_unit) VALUES (?, ?, ?, ?, ?, ?)');
 
       top10.forEach(crypto => {
@@ -62,9 +63,9 @@ async function fetchCryptoData() {
 
 // Fetch data every 10 minutes
 setInterval(fetchCryptoData, 10 * 60 * 1000);
-fetchCryptoData(); // Initial fetch when the server starts
+fetchCryptoData();
 
-// API route to get the top 10 cryptos
+// API route to get the top 10 values
 app.get('/api/getTop10', (req, res) => {
   db.all('SELECT * FROM crypto_data', [], (err, rows) => {
     if (err) {
@@ -75,8 +76,7 @@ app.get('/api/getTop10', (req, res) => {
   });
 });
 
-// Serve static files (HTML, CSS, JS)
-app.use(express.static('public'));
+
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

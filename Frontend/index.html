@@ -2,29 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link
+  rel="icon"
+  href="./bf981004281deb5e03d52200ad213f25-removebg-preview.png"
+/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crypto Prices</title>
+  <title>CryptoTrading</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
    <!-- header section -->
-   <div>
-    <h1>Top 10 Cryptos</h1>
+   <div class="headerContainer">
+    <h1>HODLINFO</h1>
+    <div class="subheaderContainer">
+    <button class="btn1">INR</button>
+    <button class="btn1">BTC</button>
+    <button class="btn1">BUY BTC</button>
+    
+        <button class="Telegrambtn"> Connect Telegram</button>
+    </div>
    </div>
   
-  <table border="1">
+  <table >
     <thead>
       <tr><th>#</th>
         <th>Name</th>
-        <th>Last</th>
-        <th>Buy</th>
-        <th>Sell</th>
+        <th>Last Traded price</th>
+        <th>Buy price</th>
+        <th>Sell price</th>
         <th>Volume</th>
         <th>Base Unit</th>
       </tr>
     </thead>
     <tbody id="crypto-table">
-      <!-- Dynamic data will be rendered here -->
+      <!-- table body is imported from js here -->
     </tbody>
   </table>
 

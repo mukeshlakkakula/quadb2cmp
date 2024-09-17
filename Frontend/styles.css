@@ -6,6 +6,17 @@ body {
     margin: 2%;
     padding: 0;
   }
+  .headerContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .subheaderContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
   
   h1 {
     text-align: center;
@@ -42,12 +53,44 @@ body {
     color: red;
   }
   
-  /* Mobile Styles (For screens up to 600px wide) */
+.headerContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.subheaderContainer{
+    display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.btn1{
+    color: #fff;
+    background-color: #545b62;
+    border-color: #4e555b;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.Telegrambtn{
+    margin: 10px;
+    padding: 6px 20px;
+    border-radius: 10px;
+    background-color: #3dc6c1;
+    color: #fff !important;
+}
+
+  
   @media (max-width: 600px) {
     h1 {
       font-size: 1.5rem;
     }
   
+.headerContainer{
+    display: flex;
+    flex-direction: column;
+}
+
     table {
       width: 100%;
     }
@@ -78,11 +121,11 @@ body {
     }
   
     td:first-child {
-      width: 40px;  /* Adjust width for tablet */
+      width: 40px; 
     }
   }
   
-  /* Desktop Styles (For screens wider than 992px) */
+ 
   @media (min-width: 993px) {
     h1 {
       font-size: 2.5rem;
@@ -98,7 +141,7 @@ body {
     }
   
     td:first-child {
-      width: 50px;  /* Adjust width for desktop */
+      width: 50px; 
     }
   }
   

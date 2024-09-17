@@ -1,12 +1,11 @@
 async function fetchCryptoData() {
     try {
-      const response = await fetch('http://localhost:4000/api/getTop10');
+      const response = await fetch('https://quadb2cmp.onrender.com/api/getTop10');
       const data = await response.json();
-      console.log(data)
+   
 
       const tableBody = document.getElementById('crypto-table');
-      tableBody.innerHTML = ''; // Clear the table before populating it
-  
+      tableBody.innerHTML = ''; 
       data.forEach((crypto, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
